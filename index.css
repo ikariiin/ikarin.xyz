@@ -1,0 +1,112 @@
+/* Reset styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Color variables */
+:root {
+  --primary: #a593f9;
+  --text: #222933;
+  --text-secondary: #a3a5a8;
+  --bg: #efefef;
+  --curve: 50px;
+  --gap: 0.75rem;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+
+  color: var(--text);
+
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body .link-container {
+  padding: var(--gap);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body .link-container .header {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+body .link-container .links {
+  writing-mode: sideways-lr;
+  text-orientation: mixed;
+
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+
+  column-gap: calc(var(--gap));
+
+  font-size: 0.9rem;
+}
+
+body .link-container .links .link {
+  color: var(--primary) !important;
+  text-decoration: none;
+
+  border-right: 3px solid var(--primary);
+  cursor: pointer;
+}
+
+body .display {
+  background: var(--bg);
+
+  border-top-left-radius: var(--curve);
+  border-bottom-left-radius: var(--curve);
+
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+
+  padding: 0 var(--gap);
+}
+
+body .display .media {
+  height: calc(100vh - var(--gap) * 2);
+  max-height: calc(100vh - var(--gap) * 2);
+
+  object-fit: cover;
+  object-position: center;
+
+  width: 100%;
+  max-width: 100%;
+
+  border-radius: var(--curve);
+
+  margin: var(--gap) 0;
+}
+
+body .display .text {
+  display: flex;
+  flex-direction: column;
+
+  padding: calc(var(--gap) * 2) calc(var(--gap) * 3);
+}
+
+body .display .text .hero {
+  font-size: 5.5rem;
+  font-weight: 500;
+
+  flex-grow: 1;
+}
+
+body .display .text .about {
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
